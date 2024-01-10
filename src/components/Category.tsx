@@ -1,15 +1,20 @@
+import { useNavigate } from "react-router-dom"
 
 interface CategoryProps {
+    name: string,
     category: string,
     image: string
 }
 
 
-const Category = ({category, image}: CategoryProps) => {
+const Category = ({name, category, image}: CategoryProps) => {
+
+  const navigate = useNavigate()
+
   return (
     <div>
-        <div className=" cursor-pointer">
-            <h3>{category}.</h3>
+        <div onClick={() => navigate(`/image/${category}`)} className=" cursor-pointer">
+            <h3>{name}.</h3>
             <img src={image} alt={category} width={500} height={200} />
         </div>
         {/* // category card */}

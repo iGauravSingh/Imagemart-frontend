@@ -4,13 +4,17 @@ import Button from "./Button";
 import { useState } from "react";
 import Browse from "./Browse";
 import Cart from "./Cart";
+import {  useNavigate } from "react-router-dom";
 
 
 
 const html = document.documentElement
 
 
+
 const Navbar = () => {
+
+  const navigate = useNavigate()
   const [showBrowse, setShowBrowse] = useState(false);
 
   const handleBrowse = () => {
@@ -38,11 +42,11 @@ const Navbar = () => {
             </div>
             {showBrowse ? <Browse closeBrowse={closeBrowse} /> : null}
 
-            <p className="cursor-pointer">Pricing</p>
+            <p onClick={() => navigate('/plans')}  className="cursor-pointer">Pricing</p>
           </div>
 
           {/* // company Icon */}
-          <h1 className="flex cursor-pointer">
+          <h1 onClick={() => navigate('/')} className="flex cursor-pointer">
             <span>
               <p className="font-dance text-2xl md:text-4xl">Image</p>
             </span>
@@ -53,15 +57,15 @@ const Navbar = () => {
 
           {/* //navbar Right side icons */}
           <div className="flex items-center justify-center gap-4">
-            <div className="flex items-center justify-center cursor-pointer">
+            <div onClick={() => navigate('/aigen')} className="flex items-center justify-center cursor-pointer">
               <WiStars size={40} />
               <p>Ai Generator</p>
             </div>
-            <div className="flex cursor-pointer">
+            <div onClick={() => navigate('/cart')} className="flex cursor-pointer">
               <Cart size={25} />
             </div>
             {/* //Button */}
-            <div className="ml-2">
+            <div onClick={() => navigate('/login')} className="ml-2">
               <Button heading="Sign in" />
             </div>
           </div>

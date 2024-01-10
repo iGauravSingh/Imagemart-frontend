@@ -40,7 +40,7 @@ const Intro = () => {
             <div className="flex flex-wrap gap-6 mt-12 justify-center">
             {categories.map((cat) => (
                 <div className="" key={cat.category}>
-                    <Category category={cat.category} image={cat.images} />
+                    <Category name={cat.name} category={cat.category} image={cat.images} />
                 </div>
             ))}
             </div>

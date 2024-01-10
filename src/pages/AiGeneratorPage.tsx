@@ -1,8 +1,14 @@
-import React from 'react'
+
+import Navbar from '../components/Navbar'
 
 const AiGeneratorPage = () => {
   return (
-    <div>AiGeneratorPage</div>
+    <div>
+      <Navbar />
+      <div>
+        Aigeneratoor 
+      </div>
+    </div>
   )
 }
 

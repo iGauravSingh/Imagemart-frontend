@@ -7,7 +7,8 @@ import war from "../assets/war.jpg";
 
 export const categories = [
   {
-    category: "Artificial Intelligence",
+    name: 'Artificial Intelligence' ,
+    category: "ai",
     images: ai, // should be called banner
     imageArr: [
       { id: 1, imageName: "image1.jpg", link: ai },
@@ -19,7 +20,8 @@ export const categories = [
     ]
   },
   {
-    category: "New Year",
+    name: "New Year",
+    category:'newyear',
     images: newyear,
     imageArr: [
       { id: 1, imageName: "image1.jpg", link: ai },
@@ -31,7 +33,8 @@ export const categories = [
     ]
   },
   {
-    category: "Festival",
+    name: "Festival",
+    category: 'festival',
     images: festival,
     imageArr: [
       { id: 1, imageName: "image1.jpg", link: ai },
@@ -43,6 +46,7 @@ export const categories = [
     ]
   },
   {
+    name: "Festival",
     category: "war",
     images: newyear,
     imageArr: [
@@ -55,7 +59,8 @@ export const categories = [
     ]
   },
   {
-    category: "Artificial Intelligence",
+    name: "Festival",
+    category: "ai",
     images: ai,
     imageArr: [
       { id: 1, imageName: "image1.jpg", link: ai },
@@ -67,7 +72,8 @@ export const categories = [
     ]
   },
   {
-    category: "New Year",
+    name: "Festival",
+    category: "newyear",
     images: newyear,
     imageArr: [
       { id: 1, imageName: "image1.jpg", link: ai },
@@ -79,7 +85,8 @@ export const categories = [
     ]
   },
   {
-    category: "Festival",
+    name: "Festival",
+    category: "festival",
     images: festival,
     imageArr: [
       { id: 1, imageName: "image1.jpg", link: ai },
@@ -91,6 +98,7 @@ export const categories = [
     ]
   },
   {
+    name: "Festival",
     category: "war",
     images: newyear,
     imageArr: [
