@@ -13,7 +13,7 @@ import "./index.css";
 
 import HomePage from "./pages/HomePage.tsx";
 import Authentication from "./pages/AuthenticationPage.tsx";
-import CategoryItem from "./pages/CategoryItem.tsx";
+import CategoryItemPage from "./pages/CategoryItemPage.tsx";
 import PricingPage from "./pages/PricingPage.tsx";
 import ShopingCartPage from "./pages/ShopingCartPage.tsx";
 import AiGeneratorPage from "./pages/AiGeneratorPage.tsx";
@@ -26,7 +26,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<Authentication />} />
       <Route path="/cart" element={<ShopingCartPage />} />
       <Route path="/plans" element={<PricingPage />} />
-      <Route path="/image/:cat" element={<CategoryItem />} />
+      <Route path="/image/:cat" element={<CategoryItemPage />} />
       <Route path="/aigen" element={<AiGeneratorPage />} />
       <Route path="*" element={<PageNotFound />} />
     </Route>

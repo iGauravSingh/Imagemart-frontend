@@ -17,11 +17,11 @@ const CategoryItem = () => {
     <div className="">
         <Navbar />
         <div className=" ml-8 mt-8 font-serif font font-semibold text-2xl ">
-          <h3>Category item : {cat.cat}</h3>
+          <h3>{cat.cat}</h3>
         </div>
         <div className="flex flex-wrap justify-center gap-6 mt-16">
             {categories[0].imageArr.map(igg => (
-                <div key={igg.id}><ImageCard name={igg.imageName} img={igg.link} /></div>
+                <div key={igg.id}><ImageCard id={igg.id} name={igg.imageName} img={igg.link} price={igg.price} /></div>
             ))}
         </div>
     </div>

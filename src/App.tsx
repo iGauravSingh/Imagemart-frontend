@@ -1,6 +1,7 @@
 
 import { Outlet } from 'react-router-dom'
 import './App.css'
+import CartContextProvider from './context/cartContext'
 
 
 function App() {
@@ -8,7 +9,10 @@ function App() {
 
   return (
     <div className=''>
-      <Outlet />
+      <CartContextProvider>
+        <Outlet />
+      </CartContextProvider>
+      
     </div>
   )
 }
