@@ -5,6 +5,10 @@ import { useState } from "react";
 import Browse from "./Browse";
 import Cart from "./Cart";
 import {  useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
+import useAuth from "../hooks/useAuth";
+import UserLoginIcon from "./UserLoginIcon";
 
 
 
@@ -16,6 +20,8 @@ const Navbar = () => {
 
   const navigate = useNavigate()
   const [showBrowse, setShowBrowse] = useState(false);
+  const { user, isLoading } = useSelector((state: RootState) => state.user.value)
+  const logout = useAuth()
 
   const handleBrowse = () => {
     setShowBrowse(true);
@@ -64,10 +70,19 @@ const Navbar = () => {
             <div onClick={() => navigate('/cart')} className="flex cursor-pointer">
               <Cart size={25} />
             </div>
-            {/* //Button */}
-            <div onClick={() => navigate('/login')} className="ml-2">
-              <Button heading="Sign in" />
+            {/* //Button or User Symbol */}
+            <div>
+              { (user && !isLoading) ? (
+                <div>
+                  <UserLoginIcon username={user.username} />
+                </div>
+              ) : (
+                <div onClick={() => navigate('/login')} className="ml-2">
+                <Button heading="Sign in" />
+              </div>
+              )}
             </div>
+            
           </div>
         </div>
       </nav>

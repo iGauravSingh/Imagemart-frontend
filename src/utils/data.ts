@@ -6,9 +6,10 @@ import war from "../assets/war.jpg";
 export const categories = [
   {
     id: 1,
-    name: "Artificial Intelligence",
-    category: "ai",
-    images: ai, // should be called banner
+    name: "Artificial Intelligence", //categoryname
+    category: "ai", // categorytype
+    images: ai, // coverimage
+    // id , imagename , size , licence , link , price
     imageArr: [
       { id: 1, imageName: "image1.jpg", link: ai, price: 10 },
       { id: 2, imageName: "image1.jpg", link: ai, price: 10 },

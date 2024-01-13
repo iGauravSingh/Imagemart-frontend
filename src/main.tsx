@@ -9,6 +9,10 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
+
+import { Provider } from "react-redux";
+import { store } from "./app/store.ts";
+
 import "./index.css";
 
 import HomePage from "./pages/HomePage.tsx";
@@ -18,6 +22,9 @@ import PricingPage from "./pages/PricingPage.tsx";
 import ShopingCartPage from "./pages/ShopingCartPage.tsx";
 import AiGeneratorPage from "./pages/AiGeneratorPage.tsx";
 import PageNotFound from "./pages/PageNotFound.tsx";
+import PrivateRoutes from "./utils/PrivateRoutes.tsx";
+import DashboardPage from "./pages/DashboardPage.tsx";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +34,19 @@ const router = createBrowserRouter(
       <Route path="/cart" element={<ShopingCartPage />} />
       <Route path="/plans" element={<PricingPage />} />
       <Route path="/image/:cat" element={<CategoryItemPage />} />
-      <Route path="/aigen" element={<AiGeneratorPage />} />
+
+      {/* private route to dashboard  */}
+      <Route path="/dashboard" element={<PrivateRoutes />}>
+      <Route path="/dashboard" element={<DashboardPage />} />
+      </Route>
+
+    {/* private route to aigen  */}
+    <Route path="/aigen" element={<PrivateRoutes />}>
+    <Route path="/aigen" element={<AiGeneratorPage />} />
+      </Route>
+
+
+      
       <Route path="*" element={<PageNotFound />} />
     </Route>
   )
@@ -35,5 +54,8 @@ const router = createBrowserRouter(
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />
+  <Provider store={store} >
+    <RouterProvider router={router} />
+  </Provider>
+  
 );
